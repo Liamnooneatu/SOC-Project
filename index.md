@@ -3,8 +3,8 @@ layout: home
 title: FPGA VGA Driver Project
 tags: fpga vga verilog by Liam Noone
 categories: demo
----![sample1](https://github.com/user-attachments/assets/ebb3ae66-4b99-4646-9856-f27e2587bdfa)
-![code5](https://github.com/user-attachments/assets/74071219-adeb-46d1-9367-56b91a7b1478)
+
+
 ![20241203_140447307_iOS](https://github.com/user-attachments/assets/ff24ee21-fff8-4b4f-b905-a0ba7627964b)
 
 
@@ -28,7 +28,8 @@ Summarise the project set-up and design flow. Include a screenshot of your own s
 ### **Template Code**
 This is what most of my coding with verilog looked like, fixing my testbench in the simulation. On the left hand side of the screen you can see my files in design sources and the mani file i was utilizing was the colour stripes
 which i kept as the same name for convinience. On the right side of the screen you can see my colour stripes file that i was editing at the time, i was configuring the lightining bolt starting positon that i could use. Colour stripes was the main file i was working on but i did end up making 
-<img src="https://github.com/Liamnooneatu/SOC-Project/blob/main/docs/assets/images/sample1.png">
+---![sample1](https://github.com/user-attachments/assets/ebb3ae66-4b99-4646-9856-f27e2587bdfa)
+
 Outline the structure and design of the Verilog code templates you were given. What do they do? Include reference to how a VGA interface works. Guideline: 2/3 short paragraphs, consider including screenshot(s).
 ### **Simulation**
 The Simulation verifies the functionality of your program before implementation. Using testbench you can simulate your VGA controller by providing input clock signals and observing outputs like hsync, vsync, and RGB signals. The simulation allows you to confirm if there are bugs or errors withing the program. For example, ensure horizontal and vertical sync pulses match the VGA timing standard.
@@ -41,14 +42,25 @@ The synthesis process converts your Verilog RTL code into a netlist, describing 
 
 Describe the synthesis and implementation processes. Consider including 1/2 useful screenshot(s). Guideline: 1/2 short paragraphs.
 ### **Demonstration**
+This was the work in progress i had for the metallcia lettering the M letter was the most difficult to line up as using diagonal bars instead of vertical and horizontal has to 
 Perhaps add a picture of your demo. Guideline: 1/2 sentences.
+![20241203_140447307_iOS](https://github.com/user-attachments/assets/ef1ee899-3872-4967-9c78-f0ba24a82c85)
+![20241203_151303494_iOS](https://github.com/user-attachments/assets/401f3321-5bbc-447d-98a6-ba5c482789e8)
 
 ## **My VGA Design Edit**
 for my project i had the idea for a metallica logo and wanted to make the lettering similar to the classic logo. I took inspiration from some photos online including this one. 
 (  https://static.wikia.nocookie.net/metal-central/images/6/69/18122-1366x768.jpg/revision/latest?cb=20131229034257  ). Making the lettering started off very difficult because the dimensions for vertical and horizontal were very close,
 which made it harder to get lined up correctly. 
 Introduce your own design idea. Consider how complex/achievabble this might be or otherwise. Reference any research you do online (use hyperlinks).
+
+
 ### **Code Adaptation**
+This is my Working code i used
+![code1](https://github.com/user-attachments/assets/2ff2ae4b-2982-4dc3-9fcd-f3662d663f78)
+![code2](https://github.com/user-attachments/assets/4b584eb1-7732-42fb-b3d8-0b6116a05635)
+![code3](https://github.com/user-attachments/assets/35e4b5a1-1aed-4c0c-9939-ae1e2cffb986)
+![code4](https://github.com/user-attachments/assets/c385340f-f066-46d8-986c-7d7065fe1fea)
+![code5](https://github.com/user-attachments/assets/74071219-adeb-46d1-9367-56b91a7b1478)
 Briefly show how you changed the template code to display a different image. Demonstrate your understanding. Guideline: 1-2 short paragraphs.
 ### **Simulation**
 Show how you simulated your own design. Are there any things to note? Demonstrate your understanding. Add a screenshot. Guideline: 1-2 short paragraphs.
