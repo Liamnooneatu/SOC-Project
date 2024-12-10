@@ -17,13 +17,11 @@ Enter Vivado and create a new project and select desired starting files ( we wer
 Then you can then run your simulatioin and complete a Synthesis to check for syntax errors and basic logic compatibility. After successful synthesis and implementation you can then Generate a Bitstream. You then plug the vga cable ionto your board and monitor and upload the file and you can view your creation. These are the main files i utilized in the project.
 
 ![sample1](https://github.com/user-attachments/assets/6b66928d-ddeb-4882-9670-51b33e3257b0)
-
 ![vgasync](https://github.com/user-attachments/assets/81b224ca-3b8e-4f32-80c4-a58647f63a57)
 
 
 ### **Template Code**
-This is what most of my coding with verilog looked like, fixing my testbench in the simulation. On the left hand side of the screen you can see my files in design sources and the mani file i was utilizing was the colour stripes
-which i kept as the same name for convinience. On the right side of the screen you can see my colour stripes file that i was editing at the time, i was configuring the lightining bolt starting positon that i could use. Colour stripes was the main file i was working on but i did end up making 
+This is what most of my coding with Verilog looked like, fixing my Testbench in the Simulation. On the left hand side of the screen you can see my files in **design sources** and the main file i was utilizing was the **colour stripes** and **VGA top** which i kept as the same name for convinience. On the right side of the screen you can see my **Colour stripes** file that i was editing at the time, i was configuring the lightining bolt starting positon that i could use. Colour stripes was the main file i was working on but i did end up making some minor changes when begining the project in *VGA TOP*.
 ---![sample1](https://github.com/user-attachments/assets/ebb3ae66-4b99-4646-9856-f27e2587bdfa)
 
 Outline the structure and design of the Verilog code templates you were given. What do they do? Include reference to how a VGA interface works. Guideline: 2/3 short paragraphs, consider including screenshot(s).
