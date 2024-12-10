@@ -6,9 +6,9 @@ categories: demo
 
 <img src="https://github.com/Liamnooneatu/SOC-Project/blob/main/Snip%20of%20%20graph.png">
 
-This is my Project i have created in vivado that displays a metallica logo. Vivado was created Xillinx and then they were purchased by AMD.
-This project is used to show skills i have learned using vivado with  vga and fpga (Field Programmable Gate Arrays), VGA stands for Video Graphics Array.
-A VGA Controller is the main component of Video Signal generator responsible for video signal production. It uses analog singal for displaying frames onto the display.
+This is my Project i have created in **Vivado** that displays a Metallica logo. Vivado was created **Xillinx** and then they were purchased by **AMD**.
+This Project is used to show skills i have learned using Vivado with  **VGA** and **FPGA** (*Field Programmable Gate Arrays*), **VGA** stands for *Video Graphics Array*.
+A **VGA** Controller is the main component of Video Signal generator responsible for video signal production. It uses *analog singal* for displaying frames onto the display.
 Here is my FPGA VGA Driver Project that contains information and code regarding the possibilites of the  basys3 board.
 
 ## **VGA Design**
