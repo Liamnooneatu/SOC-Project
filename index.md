@@ -4,6 +4,7 @@ title: FPGA VGA Driver Project
 tags: fpga vga verilog by Liam Noone
 categories: demo
 ---![sample1](https://github.com/user-attachments/assets/ebb3ae66-4b99-4646-9856-f27e2587bdfa)
+![code5](https://github.com/user-attachments/assets/74071219-adeb-46d1-9367-56b91a7b1478)
 
 
 <img src="https://github.com/Liamnooneatu/SOC-Project/blob/main/Snip%20of%20%20graph.png">
