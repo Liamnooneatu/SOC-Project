@@ -52,7 +52,7 @@ If you get your own design working on the Basys3 board, take a picture! Guidelin
 The first imgae i created was the colour cycle , then the colour stripes and finally the metallica logo.
 
 <img src="https://github.com/Liamnooneatu/SOC-Project/blob/main/20241126_140116209_iOS.jpg">
-<img src="https://raw.githubusercontent.com/Liamnooneatu/SOC-Project/blob/main/20241126_140116209_iOS.jpg">
+<img src="https://raw.githubusercontent.com/Liamnooneatu/SOC-Project/blob/main/docs/assets/images/20241126_140116209_iOS.jpg">
 ## **More Markdown Basics**
 This is a paragraph. Add an empty line to start a new paragraph.
 
