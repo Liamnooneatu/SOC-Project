@@ -5,6 +5,7 @@ tags: fpga vga verilog by Liam Noone
 categories: demo
 ---![sample1](https://github.com/user-attachments/assets/ebb3ae66-4b99-4646-9856-f27e2587bdfa)
 ![code5](https://github.com/user-attachments/assets/74071219-adeb-46d1-9367-56b91a7b1478)
+![20241203_140447307_iOS](https://github.com/user-attachments/assets/ff24ee21-fff8-4b4f-b905-a0ba7627964b)
 
 
 <img src="https://github.com/Liamnooneatu/SOC-Project/blob/main/Snip%20of%20%20graph.png">
