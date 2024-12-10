@@ -4,10 +4,6 @@ title: FPGA VGA Driver Project
 tags: fpga vga verilog by Liam Noone
 categories: demo
 
-
-![20241203_140447307_iOS](https://github.com/user-attachments/assets/ff24ee21-fff8-4b4f-b905-a0ba7627964b)
-
-
 <img src="https://github.com/Liamnooneatu/SOC-Project/blob/main/Snip%20of%20%20graph.png">
 
 This is my Project i have created in vivado that displays a metallica logo. Vivado was created Xillinx and then they were purchased by AMD.
@@ -18,11 +14,11 @@ Here is my FPGA VGA Driver Project that contains information and code regarding 
 ## **VGA Design**
 ### **Project Set-Up**
 Enter Vivado and create a new project and select desired starting files ( we were given colour stripes and colourcycle.v files). Once you are happy with you setup make sure design sources has the correct amount of files (common bug).
-Then you can then run your simulatioin and complete a Synthesis to check for syntax errors and basic logic compatibility. After successful synthesis and implementation you can then Generate a Bitstream. You then plug the vga cable ionto your board 
-and monitor and upload the file and you can view your creation.
-Summarise the project set-up and design flow. Include a screenshot of your own set-up, for example see the image of my Project Summary window below. Guideline 1 short paragraph.
+Then you can then run your simulatioin and complete a Synthesis to check for syntax errors and basic logic compatibility. After successful synthesis and implementation you can then Generate a Bitstream. You then plug the vga cable ionto your board and monitor and upload the file and you can view your creation. These are the main files i utilized in the project.
 
-<img src="https://raw.githubusercontent.com/melgineer/fpga-vga-verilog/main/docs/assets/images/VGAPrjSum.png">
+![sample1](https://github.com/user-attachments/assets/6b66928d-ddeb-4882-9670-51b33e3257b0)
+
+![vgasync](https://github.com/user-attachments/assets/81b224ca-3b8e-4f32-80c4-a58647f63a57)
 
 
 ### **Template Code**
@@ -33,11 +29,13 @@ which i kept as the same name for convinience. On the right side of the screen y
 Outline the structure and design of the Verilog code templates you were given. What do they do? Include reference to how a VGA interface works. Guideline: 2/3 short paragraphs, consider including screenshot(s).
 ### **Simulation**
 The Simulation verifies the functionality of your program before implementation. Using testbench you can simulate your VGA controller by providing input clock signals and observing outputs like hsync, vsync, and RGB signals. The simulation allows you to confirm if there are bugs or errors withing the program. For example, ensure horizontal and vertical sync pulses match the VGA timing standard.
+![schematic](https://github.com/user-attachments/assets/7ea4f9ca-57b5-484f-8721-8a83ad56c5ef)
 
 Explain the simulation process. Reference any important details, include a well-selected screenshot of the simulation. Guideline: 1/2 short paragraphs.
 ### **Synthesis**
 The synthesis process converts your Verilog RTL code into a netlist, describing how the hardware components are connected. It ensures the design meets logical requirements and hardware constraints. Implementation maps this netlist to the FPGA resources. Ensuring no warnings or errors appear after synthesis. after synthesis and implementation you can view reports to check resource utilization and timing analysis.
 
+![Snip of  graph](https://github.com/user-attachments/assets/f5708315-a31b-425e-96b2-338152597b38)
 
 
 Describe the synthesis and implementation processes. Consider including 1/2 useful screenshot(s). Guideline: 1/2 short paragraphs.
