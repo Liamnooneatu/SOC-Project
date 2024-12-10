@@ -20,7 +20,12 @@ and monitor and upload the file and you can view your creation.
 Summarise the project set-up and design flow. Include a screenshot of your own set-up, for example see the image of my Project Summary window below. Guideline 1 short paragraph.
 
 <img src="https://raw.githubusercontent.com/melgineer/fpga-vga-verilog/main/docs/assets/images/VGAPrjSum.png">
+
+
 ### **Template Code**
+This is what most of my coding with verilog looked like, fixing my testbench in the simulation. On the left hand side of the screen you can see my files in design sources and the mani file i was utilizing was the colour stripes
+which i kept as the same name for convinience. On the right side of the screen you can see my colour stripes file that i was editing at the time, i was configuring the lightining bolt starting positon that i could use.
+<img src="https://github.com/Liamnooneatu/SOC-Project/blob/main/docs/assets/images/sample1.png">
 Outline the structure and design of the Verilog code templates you were given. What do they do? Include reference to how a VGA interface works. Guideline: 2/3 short paragraphs, consider including screenshot(s).
 ### **Simulation**
 The Simulation verifies the functionality of your program before implementation. Using testbench you can simulate your VGA controller by providing input clock signals and observing outputs like hsync, vsync, and RGB signals. The simulation allows you to confirm if there are bugs or errors withing the program. For example, ensure horizontal and vertical sync pulses match the VGA timing standard.
