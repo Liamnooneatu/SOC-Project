@@ -7,14 +7,16 @@ categories: demo
 
 <img src="https://github.com/Liamnooneatu/SOC-Project/blob/main/Snip%20of%20%20graph.png">
 
-th
+This is my Project i have created in vivado that displays a metallica logo. Vivado was created Xillinx and then they were purchased by AMD.
+This project is used to show skills i have learned using vivado with  vga and fpga (Field Programmable Gate Arrays), VGA stands for Video Graphics Array.
+A VGA Controller is the main component of Video Signal generator responsible for video signal production.It uses analog singal for displaying frames onto the display
 
-Add a short welcome message or introduction here. Aim to get the viewer interested in what follows! Guideline: 1 or 2 sentences.
-
-Here is my FPGA VGA Driver Project it contains information and code regarding the possibilites of the  basys3 board.
+Here is my FPGA VGA Driver Project that contains information and code regarding the possibilites of the  basys3 board.
 
 ## **VGA Design**
 ### **Project Set-Up**
+Enter Vivado and create a new project and select desired starting files ( we were given colour stripes and colourcycle.v files). Once you are happy with you setup make sure design sources has the correct amount of files (common bug).
+Then you can then run your simulatioin and complete a Synthesis to check for syntax errors and basic logic compatibility. After successful synthesis and implementation you can then Generate a Bitstream. You then plug the vgfa cable ionto your board and monitor and upload the file and you can view your creation.
 Summarise the project set-up and design flow. Include a screenshot of your own set-up, for example see the image of my Project Summary window below. Guideline 1 short paragraph.
 
 <img src="https://raw.githubusercontent.com/melgineer/fpga-vga-verilog/main/docs/assets/images/VGAPrjSum.png">
@@ -28,6 +30,9 @@ Describe the synthesis and implementation processes. Consider including 1/2 usef
 Perhaps add a picture of your demo. Guideline: 1/2 sentences.
 
 ## **My VGA Design Edit**
+for my project i had the idea for a metallica logo and wanted to make the lettering similar to the classic logo. I took inspiration from some photos online including this one. 
+(  https://static.wikia.nocookie.net/metal-central/images/6/69/18122-1366x768.jpg/revision/latest?cb=20131229034257  ). Making the lettering started off very difficult because the dimensions for vertical and horizontal were very close,
+which made it harder to get lined up correctly. 
 Introduce your own design idea. Consider how complex/achievabble this might be or otherwise. Reference any research you do online (use hyperlinks).
 ### **Code Adaptation**
 Briefly show how you changed the template code to display a different image. Demonstrate your understanding. Guideline: 1-2 short paragraphs.
