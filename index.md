@@ -82,6 +82,13 @@ The goal was to create a Metallica-inspired logo using the VGA interface. The de
 
 Challenges included aligning diagonal bars and ensuring proportional dimensions due to the pixel resolution limitations of VGA.
 
+
+## Original Attempts
+![20241203_140350353_iOS](https://github.com/user-attachments/assets/8474f96d-159c-47d8-9ec1-aa39b4da4c0c)
+![20241203_140447307_iOS](https://github.com/user-attachments/assets/d3b1b527-d03c-477c-8359-5ea2ac838929)
+![20241203_151303494_iOS](https://github.com/user-attachments/assets/7598ae2f-9a71-4775-b107-3c005fb5b081)
+
+
 ### Code Adaptation
 The provided `colour_stripes.v` file was modified to:
 - Set the starting position of the lightning bolt.
@@ -97,6 +104,19 @@ end
 
 ### Simulation and Testing
 Using the testbench, the modified design was simulated to verify correct `hsync` and `vsync` signal timing, ensuring no flickering or stuttering happened to the logo.
+![sketch](https://github.com/user-attachments/assets/10c59a33-8794-47fb-bafc-2edddfe79f3c)
+
+The graph represents the VGA timing signals required to synchronize the monitor:
+
+Hsync:
+contains active video, front porch, sync pulse, and back porch.
+Timing must meet the VGA specifications for 480p (640x480 resolution).
+
+Pixel Clock:Determines the rate at which pixels are transmitted to the display.
+
+Vsync: makes sure the picture and frame align right and refresh rate.
+
+The hsync and vsync regions defines the area where the Metallica logo is rendered.
 
 ---
 
@@ -108,31 +128,34 @@ Using the testbench, the modified design was simulated to verify correct `hsync`
 ![code5](https://github.com/user-attachments/assets/c9525b6b-1e51-4f45-8b0b-7b306db54c37)
 
 
+
+The blue lighting that moves alligns has been set to meet in the centre and resest after 23 movement cycles.
+A frame counter keeps track of the number of frames rendered and triggers an update every 23 cycles.
+
+I had to define 4 lightning bolts and change starting dimensions every time.
+Getting the M in the metallica logo served to be the most difficult challenge as it was impossible to line up the letterting
+
+This code produces the metallica logo which has been defined with horozontial and vertical dimensions bars. 
+The x and y variables represent the horizontal and vertical pixel positions, respectively.
+The range (x > 100 && x < 150, etc.) defines the boundaries of the logo's features, including letters and lightning bolts.
+Colour channels (red, green, and blue) determine the final colour of each pixel. For example, red=0, green=0, blue=1 produces a blue pixel.
+
 ## Demonstration
 
 The final design was successfully loaded onto the Basys3 board. Below are images of the Metallica logo displayed:
+![20241210_142818335_iOS](https://github.com/user-attachments/assets/bc3d76a9-f35c-4660-acb1-874056039755)
+![20241210_142819093_iOS](https://github.com/user-attachments/assets/7ab9a361-152e-4771-943c-16e6f3dff511)
+![20241210_142819742_iOS](https://github.com/user-attachments/assets/c0b34ce6-f407-4b38-a9d1-9e2f29d74659)
+![20241210_142816606_iOS](https://github.com/user-attachments/assets/a3568f01-9519-4626-bfe4-e75e4cd95bb2)
 
-![Demo Image 1](https://github.com/Liamnooneatu/SOC-Project/blob/main/20241126_140116209_iOS.jpg)
-![Demo Image 2](https://github.com/Liamnooneatu/SOC-Project/blob/main/20241203_151303494_iOS.jpg)
+
+
 
 ---
 
-## Markdown Basics
 
-This is a paragraph. Add an empty line to start a new paragraph.
+## Video
+A video demonstration of the design in action can be viewed here:
 
-Font can be emphasized as *Italic* or **Bold**.
-
-Code can be highlighted by using `backticks`.
-
-Hyperlinks look like this: [GitHub Help](https://help.github.com/).
-
-A bullet list can be rendered as follows:
-- Vectors
-- Algorithms
-- Iterators
-
-Images can be added by uploading them to the repository in a `/docs/assets/images` folder, then rendering using Markdown syntax:
-
-```markdown
-![Image Description](https://raw.githubusercontent.com/melgineer/fpga-vga-verilog/main/docs/assets/images/VGAPrjSrcs.png)
+Shows the Metallica logo being displayed with proper synchronization, thanks to the hsync and vsync timing signals.
+https://github.com/Liamnooneatu/SOC-Project/blob/main/20241210_142807000_iOS.MOV
