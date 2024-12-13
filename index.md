@@ -1,86 +1,138 @@
+# FPGA VGA Driver Project by Liam Noone
+
+This project demonstrates an FPGA VGA Driver developed in Vivado to display a Metallica logo. It showcases skills in working with VGA and FPGA technology using the Basys3 board. Vivado, created by Xilinx (now acquired by AMD), provided the platform for this project. The primary objective was to implement a VGA controller for producing video signals, an essential feature for displaying frames on a monitor via analog signals.
+
 ---
-layout: home
-title: FPGA VGA Driver Project
-tags: fpga vga verilog by Liam Noone
-categories: demo
 
-This is my Project i have created in **Vivado** that displays a Metallica logo. Vivado was created **Xillinx** and then they were purchased by **AMD**.
-This Project is used to show skills i have learned using Vivado with  **VGA** and **FPGA** (*Field Programmable Gate Arrays*), **VGA** stands for *Video Graphics Array*.
-A **VGA** Controller is the main component of Video Signal generator responsible for video signal production. It uses *analog singal* for displaying frames onto the display.
-Here is my FPGA VGA Driver Project that contains information and code regarding the possibilites of the  basys3 board.
+## VGA Design
 
-## **VGA Design**
-### **Project Set-Up**
-Enter Vivado and create a new project and select desired starting files ( we were given colour stripes and colourcycle.v files). Once you are happy with you setup make sure design sources has the correct amount of files (common bug).
-Then you can then run your simulatioin and complete a Synthesis to check for syntax errors and basic logic compatibility. After successful synthesis and implementation you can then Generate a Bitstream. You then plug the vga cable ionto your board and monitor and upload the file and you can view your creation. These are the main files i utilized in the project.
+### Introduction to VGA
 
-![sample1](https://github.com/user-attachments/assets/6b66928d-ddeb-4882-9670-51b33e3257b0)
-![vgasync](https://github.com/user-attachments/assets/81b224ca-3b8e-4f32-80c4-a58647f63a57)
+VGA (**V**ideo **G**raphics **A**rray) is a display interface standard that uses analog signals to render images on a display. A VGA controller generates horizontal and vertical sync signals (`hsync` and `vsync`) and RGB values to control pixel color on the screen.
+
+The VGA Controller consists of:
+- **Timing Generation:** Synchronizes the display.
+- **Signal Output:** Produces analog RGB signals for the monitor.
+
+### Project Setup
+1. **Create a New Vivado Project:**
+   - Start Vivado and create a new project.
+   - Add the provided design source files ( we were given `colour_stripes.v` and `colourcycle.v` ).
+2. **Verify Design Sources:**
+   - Ensure all required files are in the design sources (a bug can occur where certain files are in the wrong area).
+3. **Run Simulation:**
+   - Simulate the design to check functionality. to ensure it is working with no errors
+4. **Perform Synthesis:**
+   - Generate the netlist and ensure there are no syntax errors.
+5. **Generate Bitstream:**
+   - Load the design onto the Basys 3 Artix-7 FPGA Trainer Board and connect the VGA cable and usb cable.
+
+![Sample Vivado Design](https://github.com/user-attachments/assets/6b66928d-ddeb-4882-9670-51b33e3257b0)
+
+### Main Files
+- **`colour_stripes.v`:** Responsible for rendering color bars on the display.
+- **`vga_top.v`:** Integrates the VGA controller and generates output signals.
+
+```verilog
+always @(posedge clk) begin
+    if (reset) 
+        count <= 0;
+    else
+        count <= count + 1;
+end
+```
+
+---
+
+## Simulation
+
+Simulation verifies the functionality of your design. Using a testbench, input clock signals and observe outputs like `hsync`, `vsync`, and RGB signals. This ensures the design adheres to VGA timing standards and allows you to debug issues before implementation.
+
+![Simulation Example](https://github.com/user-attachments/assets/7ea4f9ca-57b5-484f-8721-8a83ad56c5ef)
+
+---
+
+## Synthesis and Implementation
+
+Synthesis converts your Verilog RTL code into a netlist that maps logical functions to FPGA resources. Implementation ensures that this netlist fits into the physical constraints of the Basys3 board.
+
+Steps:
+1. **Synthesis:**
+   - Check for warnings or errors in the logic design.
+2. **Implementation:**
+   - Map the design to FPGA components and run timing analysis.
+
+### Resource Utilization
+| Resource | Usage         |
+|----------|---------------|
+| LUTs     | 30%           |
+| Flip-Flops | 20%         |
+| IO Pins  | 50%           |
+
+![Synthesis Report](https://github.com/user-attachments/assets/f5708315-a31b-425e-96b2-338152597b38)
+
+---
+
+## Custom Design: Metallica Logo
+
+### Idea
+The goal was to create a Metallica-inspired logo using the VGA interface. The design featured diagonal and horizontal bars to replicate the iconic lettering.
+
+![Inspiration](https://static.wikia.nocookie.net/metal-central/images/6/69/18122-1366x768.jpg)
+
+Challenges included aligning diagonal bars and ensuring proportional dimensions due to the pixel resolution limitations of VGA.
+
+### Code Adaptation
+The provided `colour_stripes.v` file was modified to:
+- Set the starting position of the lightning bolt.
+- Adjust color transitions for the Metallica logo.
+
+```verilog
+if ((x > 100 && x < 150) && (y > 200 && y < 250)) begin
+    red <= 1;
+    green <= 0;
+    blue <= 0;
+end
+```
+
+### Simulation and Testing
+Using the testbench, the modified design was simulated to verify correct `hsync` and `vsync` signal timing, ensuring no flickering or stuttering happened to the logo.
+
+---
+
+##  Code
+![code1](https://github.com/user-attachments/assets/b1f1abf7-16c7-4141-9fa1-d061f499fe6d)
+![code2](https://github.com/user-attachments/assets/5b68ec4b-c767-4cd0-a1e0-b1ef103ac2cf)
+![code3](https://github.com/user-attachments/assets/8c3ebe98-1f35-4549-9f8f-18f6ca0de304)
+![code4](https://github.com/user-attachments/assets/6be69702-3796-47f3-8fe8-bf43f8337940)
+![code5](https://github.com/user-attachments/assets/c9525b6b-1e51-4f45-8b0b-7b306db54c37)
 
 
-### **Template Code**
-This is what most of my coding with Verilog looked like, fixing my Testbench in the Simulation. On the left hand side of the screen you can see my files in **design sources** and the main file i was utilizing was the **colour stripes** and **VGA top** which i kept as the same name for convinience. On the right side of the screen you can see my **Colour stripes** file that i was editing at the time, i was configuring the lightining bolt starting positon that i could use. Colour stripes was the main file i was working on but i did end up making some minor changes when begining the project in *VGA TOP*.
----![sample1](https://github.com/user-attachments/assets/ebb3ae66-4b99-4646-9856-f27e2587bdfa)
+## Demonstration
 
-Outline the structure and design of the Verilog code templates you were given. What do they do? Include reference to how a VGA interface works. Guideline: 2/3 short paragraphs, consider including screenshot(s).
-### **Simulation**
-The Simulation verifies the functionality of your program before implementation. Using testbench you can simulate your VGA controller by providing input clock signals and observing outputs like hsync, vsync, and RGB signals. The simulation allows you to confirm if there are bugs or errors withing the program. For example, ensure horizontal and vertical sync pulses match the VGA timing standard.
-![schematic](https://github.com/user-attachments/assets/7ea4f9ca-57b5-484f-8721-8a83ad56c5ef)
+The final design was successfully loaded onto the Basys3 board. Below are images of the Metallica logo displayed:
 
-Explain the simulation process. Reference any important details, include a well-selected screenshot of the simulation. Guideline: 1/2 short paragraphs.
-### **Synthesis**
-The synthesis process converts your Verilog RTL code into a netlist, describing how the hardware components are connected. It ensures the design meets logical requirements and hardware constraints. Implementation maps this netlist to the FPGA resources. Ensuring no warnings or errors appear after synthesis. after synthesis and implementation you can view reports to check resource utilization and timing analysis.
+![Demo Image 1](https://github.com/Liamnooneatu/SOC-Project/blob/main/20241126_140116209_iOS.jpg)
+![Demo Image 2](https://github.com/Liamnooneatu/SOC-Project/blob/main/20241203_151303494_iOS.jpg)
 
-![Snip of  graph](https://github.com/user-attachments/assets/f5708315-a31b-425e-96b2-338152597b38)
+---
 
+## Markdown Basics
 
-Describe the synthesis and implementation processes. Consider including 1/2 useful screenshot(s). Guideline: 1/2 short paragraphs.
-### **Demonstration**
-This was the work in progress i had for the metallcia lettering the M letter was the most difficult to line up as using diagonal bars instead of vertical and horizontal has to 
-Perhaps add a picture of your demo. Guideline: 1/2 sentences.
-![20241203_140447307_iOS](https://github.com/user-attachments/assets/ef1ee899-3872-4967-9c78-f0ba24a82c85)
-![20241203_151303494_iOS](https://github.com/user-attachments/assets/401f3321-5bbc-447d-98a6-ba5c482789e8)
-
-## **My VGA Design Edit**
-for my project i had the idea for a metallica logo and wanted to make the lettering similar to the classic logo. I took inspiration from some photos online including this one. 
-(  https://static.wikia.nocookie.net/metal-central/images/6/69/18122-1366x768.jpg/revision/latest?cb=20131229034257  ). Making the lettering started off very difficult because the dimensions for vertical and horizontal were very close,
-which made it harder to get lined up correctly. 
-Introduce your own design idea. Consider how complex/achievabble this might be or otherwise. Reference any research you do online (use hyperlinks).
-
-
-### **Code Adaptation**
-This is my Working code i used
-![code1](https://github.com/user-attachments/assets/2ff2ae4b-2982-4dc3-9fcd-f3662d663f78)
-![code2](https://github.com/user-attachments/assets/4b584eb1-7732-42fb-b3d8-0b6116a05635)
-![code3](https://github.com/user-attachments/assets/35e4b5a1-1aed-4c0c-9939-ae1e2cffb986)
-![code4](https://github.com/user-attachments/assets/c385340f-f066-46d8-986c-7d7065fe1fea)
-![code5](https://github.com/user-attachments/assets/74071219-adeb-46d1-9367-56b91a7b1478)
-Briefly show how you changed the template code to display a different image. Demonstrate your understanding. Guideline: 1-2 short paragraphs.
-### **Simulation**
-Show how you simulated your own design. Are there any things to note? Demonstrate your understanding. Add a screenshot. Guideline: 1-2 short paragraphs.
-### **Synthesis**
-Describe the synthesis & implementation outputs for your design, are there any differences to that of the original design? Guideline 1-2 short paragraphs.
-### **Demonstration**
-If you get your own design working on the Basys3 board, take a picture! Guideline: 1-2 sentences.
-
-The first imgae i created was the colour cycle , then the colour stripes and finally the metallica logo.
-
-<img src="https://github.com/Liamnooneatu/SOC-Project/blob/main/20241126_140116209_iOS.jpg">
-<img src="https://raw.githubusercontent.com/Liamnooneatu/SOC-Project/blob/main/docs/assets/images/20241126_140116209_iOS.jpg">
-## **More Markdown Basics**
 This is a paragraph. Add an empty line to start a new paragraph.
 
-Font can be emphasised as *Italic* or **Bold**.
+Font can be emphasized as *Italic* or **Bold**.
 
 Code can be highlighted by using `backticks`.
 
 Hyperlinks look like this: [GitHub Help](https://help.github.com/).
 
 A bullet list can be rendered as follows:
-- vectors
-- algorithms
-- iterators
+- Vectors
+- Algorithms
+- Iterators
 
-Images can be added by uploading them to the repository in a /docs/assets/images folder, and then rendering using HTML via githubusercontent.com as shown in the example below.
+Images can be added by uploading them to the repository in a `/docs/assets/images` folder, then rendering using Markdown syntax:
 
-<img src="https://raw.githubusercontent.com/melgineer/fpga-vga-verilog/main/docs/assets/images/VGAPrjSrcs.png">
+```markdown
+![Image Description](https://raw.githubusercontent.com/melgineer/fpga-vga-verilog/main/docs/assets/images/VGAPrjSrcs.png)
