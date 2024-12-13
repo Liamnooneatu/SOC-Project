@@ -1,4 +1,4 @@
-# FPGA VGA Driver Project by Liam Noone
+
 
 This project demonstrates an FPGA VGA Driver developed in Vivado to display a Metallica logo. It showcases skills in working with VGA and FPGA technology using the Basys3 board. Vivado, created by Xilinx (now acquired by AMD), provided the platform for this project. The primary objective was to implement a VGA controller for producing video signals, an essential feature for displaying frames on a monitor via analog signals.
 
